@@ -1,14 +1,23 @@
-function getComputerChoice (choice) {
-    if (choice === 0) {
-        return "Rock";
-    } else if (choice === 1) {
-        return "Paper";
-    } else if (choice === 2) {
-        return "Scissors";
+function getHumanChoice () {
+    let humanChoice = prompt("rock, paper or scissors?\nChoice: ").toLowerCase();
+    return humanChoice;
+}
+
+function getComputerChoice () {
+    const computerChoice = Math.floor(Math.random() * 3);
+    if (computerChoice === 0) {
+        return "rock";
+    } else if (computerChoice === 1) {
+        return "paper";
     } else {
-        return "Error. Please Restart";
+        return "scissors";
     }
 }
 
-let randomizer = Math.floor(Math.random() * 3);
-console.log(getComputerChoice(randomizer));
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "rock") {
+        return console.log("draw");
+    }
+}
+
+playRound(getHumanChoice(), getComputerChoice());
