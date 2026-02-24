@@ -1,2 +1,2 @@
-# re-rock-paper-scissors
+# rock-paper-scissors
 refreshing javascript knowledge
