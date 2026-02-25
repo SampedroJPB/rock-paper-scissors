@@ -14,10 +14,22 @@ function getComputerChoice () {
     }
 }
 
-function playRound (humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "rock") {
-        return console.log("draw");
+function playGame (humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        return console.log("YOU LOSE.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        return console.log("You win.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        return console.log("You lose.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        return console.log("You win.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        return console.log("You lose.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        return console.log("You win.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
+    } else {
+        return console.log("Draw.\nYou picked " + humanChoice + " and computer picked " + computerChoice);
     }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
